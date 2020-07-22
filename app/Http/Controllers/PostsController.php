@@ -34,6 +34,8 @@ class PostsController extends Controller
                 // Doing Validation
                 request()->validate([
                     'post_img' => 'required|image'
+					
+					'user_img.*' => ['required', 'image'] //for multiple file upload validation
                     //'post_img' => 'required|image|max:100'//here 100 = 100 kilobyte max size
                     //'post_img' => 'required|mimes:png,jpg,jpeg,gif,pdf,doc,docx'//for file validation permited files
                 ]);
